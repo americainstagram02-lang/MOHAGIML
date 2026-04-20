@@ -423,7 +423,7 @@ def tiktok_muta7_v3(email, token, chat_id, browser, proxies):
 
 # --- [ SECTION 11: THREADING & SPEED CONTROLLER ] ---
 class SpeedMaster:
-    def __init__(self, limit=15):
+    def __init__(self, limit=80):
         self.limit = limit
         self.threads = []
 
