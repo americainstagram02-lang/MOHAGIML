@@ -599,7 +599,7 @@ def self_repair():
             open(f, "w").close()
     
     # رسالة ترحيب خاصة بـ موحا الشلفاوي عند كل إصلاح
-    if __name__ == "__main__":
+if __name__ == "__main__":
     try:
         system = MohaSystemRunner()
         self_repair()
