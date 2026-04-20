@@ -599,4 +599,26 @@ def self_repair():
             open(f, "w").close()
     
     # رسالة ترحيب خاصة بـ موحا الشلفاوي عند كل إصلاح
-    print(f"{AKH_T}[!] System Cleaned & Optimized for OPPO A16k.")
+    if __name__ == "__main__":
+    try:
+        system = MohaSystemRunner()
+        self_repair()
+        token, chat_id = system.setup_tele()
+        
+        while True:
+            system.main_menu()
+            choice = input(f"{a31} [▶] SELECT OPTION : {a12}")
+            if choice == '00':
+                print(f"\n{AH_T}[!] SHUTTING DOWN SYSTEM...")
+                break
+            elif choice in ['01', '02', '03', '04', '05', '06']:
+                system.execute(choice, token, chat_id)
+            else:
+                print(f"{AH_T}[!] INVALID CHOICE!")
+                time.sleep(1)
+    except KeyboardInterrupt:
+        print(f"\n{AH_T}[!] SYSTEM STOPPED BY USER.")
+    except Exception as e:
+        handle_system_error(e)
+        print(f"{AH_T}[!] CRITICAL ERROR: {e}")
+
